@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Comment=The PICO-8 fantasy console by lexaloffle
+Name=PICO-8
+Icon=lexaloffle-pico8.png
+Exec=pico8
+Categories=Game;Development;Education

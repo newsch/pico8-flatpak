@@ -1,0 +1,34 @@
+app-id: com.lexaloffle.pico8
+runtime: org.freedesktop.Platform
+runtime-version: '21.08'
+sdk: org.freedesktop.Sdk
+command: pico8
+modules:
+  - name: pico8
+    buildsystem: simple
+    build-commands:
+      - install -D pico8 /app/bin/pico8
+      - install -Dm644 pico8.dat /app/bin/pico8.dat
+      - install -Dm644 pico8.png /app/share/icons/hicolor/64x64/apps/$FLATPAK_ID.png
+      - install -Dm644 pico8.desktop /app/share/applications/$FLATPAK_ID.desktop
+      - desktop-file-edit --set-icon=$FLATPAK_ID /app/share/applications/$FLATPAK_ID.desktop
+    sources:
+      - type: file
+        path: pico8.png
+      - type: file
+        path: pico8.desktop
+      # proprietary PICO-8 files
+      - type: file
+        path: pico-8/pico8
+      - type: file
+        path: pico-8/pico8.dat
+finish-args:
+    - --share=network # for accessing splore (requires wget)
+    - --socket=x11
+    - --socket=wayland
+    - --socket=pulseaudio
+    - --device=dri # graphics
+    - --device=all # game controller access
+    - --filesystem=~/.lexaloffle:create # config/carts storage
+    - --filesystem=xdg-desktop # saving screenshots/gifs
+    # - --filesystem=home # running/editing external carts

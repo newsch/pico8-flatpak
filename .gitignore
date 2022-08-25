@@ -1,0 +1,8 @@
+# pico8 files
+pico-8/
+
+# flatpak
+pico8.flatpak
+.flatpak-builder/
+build/
+repo/
