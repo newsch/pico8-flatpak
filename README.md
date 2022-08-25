@@ -52,7 +52,7 @@ NOTE: You can install `flatpak-builder` without using `flatpak` by following [th
 
 ## Updating
 
-When a new version of PICO-8 is released, follow [Building](#building) (unzip the new version of PICO-8 into the same folder) and [Installing](#installing) again.
+When a new version of PICO-8 is released, run `make clean` in the pico8-flatpak directory, and follow [Building](#building) (unzip the new version of PICO-8 into the same folder) and [Installing](#installing) again.
 
 <!-- TODO
 ## Troubleshooting
