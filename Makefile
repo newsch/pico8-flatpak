@@ -22,7 +22,7 @@ build: com.lexaloffle.pico8.yml pico-8/pico8 pico-8/pico8.dat pico8.desktop pico
 	$(BUILDER) --repo=$(REPO) build com.lexaloffle.pico8.yml
 
 install: pico8.flatpak
-	flatpak install pico8.flatpak -y
+	flatpak --user install pico8.flatpak -y
 install-from-repo: build
 	$(BUILDER) --user --install --force-clean build com.lexaloffle.pico8.yml
 run:
